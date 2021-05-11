@@ -1,0 +1,50 @@
+VideoVerhuurbedrijfWeb
+
+Verhuring - Verhuringen
+Klant - Klanten
+Film - Films
+Genre - Genres
+VideoVerhuurbedrijfDbContext
+
+
+Klant:
+
+KlantId : int
+Naam : string
+Voornaam : string
+Straat_Nr : string
+PostCode : string
+Gemeente : string
+KlantsStat : string
+HuurAantal : int
+DatumLid : DateTime
+Lidgeld : decimal
+
+Film :
+
+FilmId : int
+Titel : string
+GenreId : int
+InVooraad : int
+UitVoorraad : int
+Prijs : decimal
+TotaalVerhuurd : decimal
+
+Genre:
+
+GenreId
+GenreNaam
+
+Verhuring :
+
+VerhuurId
+KlantId
+FilmId
+VerhuurDatum
+
+VideoVerhuurbedrijfConnection
+
+
+dotnet ef --startup-project VideoVerhuurbedrijfWeb/VideoVerhuurbedrijfWeb.csproj database update
+
+dotnet ef --startup-project VideoVerhuurbedrijfWeb/VideoVerhuurbedrijfWeb.csproj migrations add allentities -p VideoVerhuurbedrijfData/VideoVerhuurbedrijfData.csproj 

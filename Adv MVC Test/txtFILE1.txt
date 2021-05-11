@@ -1,0 +1,149 @@
+@model VideoVerhuurViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+@using (Html.BeginForm("Aanmelden", "Home", FormMethod.Post))
+    {
+        style="border:1px solid black"
+
+@if (Model == null || Model.Klant == null)
+{
+    <form asp-action="Aanmelden" method="post">
+
+        <h5> Welkom ! Meld je aan om kunnen te huren !</h5>
+        <div class="form-group">
+            <label asp-for="Klant.Naam"></label>
+            <span style="color: blue">*</span>
+            <input asp-for="Klant.Naam" />
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Klant.PostCode"></label>
+            <span style="color: blue">*</span>
+            <span asp-validation-for="Klant.PostCode"></span>
+            <input asp-for="Klant.PostCode" />
+        </div>
+
+
+        <input type="submit" value="Aanmelden" class="btn btn-primary" />
+
+    </form>
+}
+@if (Model.BekendKlant == false && Model.Klant is null)
+{
+    <p style="color: red;">Onbekende Klant, probeer opnieuw</p>
+}
+
+}
+
+
+
+From HomeController
+
+//try
+//{
+//    videoRepository.UpdateVoorraad(verhuur.FilmId);
+//}
+//catch (ArgumentOutOfRangeException)
+//{
+
+//}
+
+Afrekenen.cshtml
+
+@*<a class="btn btn-primary" asp-action="">Terug Naar Home Pagina</a>*@
+
+Allgenres.cshtml:
+
+@*<h1>ToonAllGenres</h1>*@
+@*<h4>Welkom @Model.Klant.Naam @Model.Klant.Voornaam</h4>*@
+
+FilmsVanGenre.cshtml 
+
+@*
+    asp-route-GenreId="@Model.GekozenGenre.GenreId"   asp-route-GenreNaam="@Model.GekozenGenre.GenreNaam"
+
+     else if (Film.InVoorraad <= 0)
+            {
+                <td><p>De film is op dit moment niet beschikbaar(In voorraad is 0) !</p></td>
+            }
+
+*@   
+
+Uitloggen.cshtml
+
+@*@if (Model.Verhuringen.Count >= 1)
+{
+    <a asp-action="Winkelmandje" class="btn btn-primary">Neen</a>
+}
+else
+{
+    <a asp-action="AllGenres" class="btn btn-primary">Neen</a>
+}*@
+
+Winkelmandje.cshtml 
+
+@*asp-route-verhuurId="@verhuur.VerhuurId"*@
+
+_Layout.cshtml
+
+ @*<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>*@
+
+
+Startup.cs :
+
+Configure services method :
+
+//services.Configure<RequestLocalizationOptions>(options =>
+            //{
+            //    var supportedCultures = new List<CultureInfo>
+            //    {
+            //        new CultureInfo("nl-BE"),
+            //        new CultureInfo("nl"),
+            //        //new CultureInfo("fr-BE"),
+            //        //new CultureInfo("fr"),
+            //        //new CultureInfo("en-US"),
+            //        //new CultureInfo("en")
+            //    };
+            //    options.SupportedCultures = supportedCultures;
+            //    options.SupportedUICultures = supportedCultures;
+            //    options.DefaultRequestCulture = new RequestCulture("nl-BE");
+            //});
+
+VideoVerhurrDbContext.cs
+
+//protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+
+        //    modelBuilder.Entity<Verhuur>().ToTable("Verhuringen");
+        //    modelBuilder.Entity<Verhuur>().HasKey(c => c.VerhuurId);
+        //    modelBuilder.Entity<Verhuur>().Property(b => b.VerhuurId)
+        //                                 .ValueGeneratedOnAdd();
+
+        //}
+
+SQLVideoRepository.cs
+
+//if (film.InVoorraad > 0)
+//{
+//    film.InVoorraad -= 1;
+//    film.UitVoorraad += 1;
+
+//    context.SaveChanges();
+//}
+//else
+//{
+//    throw new ArgumentOutOfRangeException();
+//}
+
+
+
+de film is al door u in de winkelwagen geplaatst
+
+
+Uiteindelijk is het onze taak om het project op tijd op te leveren en het kan alleen worden gedaan als we allemaal op tijd zijn en aan de tijdlijnen voldoen.
+Dus ik zou verwachten dat je elke dag op tijd op kantoor bent en de dagtaken voltooit voordat je vertrekt.

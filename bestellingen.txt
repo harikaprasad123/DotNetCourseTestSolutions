@@ -1,0 +1,7 @@
+1#Pizza Margherita-Groot-2-Kaas-Look-#F-Water#Ijs#2
+2#Pizza Margherita-Klein-0-#F-Water#Tiramisu#1
+2#Pizza Napoli-Groot-0-#W-Thee#Ijs#1
+0 #Lasagne-Klein-1-Look-###1
+1#Spahgetti Carbonara-Klein-0-#F-Cocacola##1
+2#Sphagetti Bolognese-Groot-1-Kaas-#F-Cocacola#Cake#1
+2###W-Koffie##3
